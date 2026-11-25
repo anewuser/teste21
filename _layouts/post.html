@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<main>
+  <article>
+    <h1>{{ page.title | escape }}</h1>
+    {%- unless site.undated contains page.category %}
+    <p class="meta">{% include date.html date=page.date %}</p>
+    {%- endunless %}
+    {{ content }}
+    <p class="meta">Categoria: <a href="{{ '/' | append: page.category | append: '/' | relative_url }}">{{ site.sections[page.category] | escape }}</a></p>
+    {%- if page.previous or page.next %}
+    <nav class="pager" aria-label="Textos">
+      {%- if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}" rel="prev">← Texto anterior</a>
+      {%- endif %}
+      {%- if page.next %}
+      <a href="{{ page.next.url | relative_url }}" rel="next" class="next">Próximo texto →</a>
+      {%- endif %}
+    </nav>
+    {%- endif %}
+  </article>
+</main>

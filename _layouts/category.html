@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<main>
+  <h1>{{ page.title | escape }}</h1>
+  {% assign posts = site.categories[page.category] %}
+  {% if posts %}
+    {% include recent.html posts=posts %}
+  {% else %}
+    <p>Nenhum texto por aqui ainda.</p>
+  {% endif %}
+</main>

@@ -1,0 +1,23 @@
+title: Margin Notes
+description: Histórias, poemas, artigos e textos sobre música.
+lang: pt-BR
+permalink: /:categories/:title/
+# url: https://SEU-USUARIO.github.io   # GitHub Pages sets this automatically; set it only for a custom domain.
+
+# Adds canonical/social meta tags ({% seo %}) and the RSS feed (/feed.xml).
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# Menu and category list, in this order: slug (used in URLs and in each
+# post's `category`) followed by the name shown on the page.
+sections:
+  historias-poesia: "Histórias & Poesia"
+  artigos: Artigos
+  musica: Música
+
+# Categories whose posts show no date.
+undated: [musica]
+
+# Month names for dates (see _includes/date.html).
+months: [janeiro, fevereiro, março, abril, maio, junho, julho, agosto, setembro, outubro, novembro, dezembro]

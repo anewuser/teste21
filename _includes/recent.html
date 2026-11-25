@@ -1,0 +1,15 @@
+{%- assign list = include.posts | default: site.posts -%}
+{%- assign max = include.limit | default: 100 -%}
+<ul class="posts">
+  {%- for post in list limit: max %}
+  {%- assign date = "" %}
+  {%- unless site.undated contains post.category %}{% capture date %}{% include date.html date=post.date %}{% endcapture %}{% endunless %}
+  {%- capture section %}{% unless include.posts %}{{ site.sections[post.category] | escape }}{% endunless %}{% endcapture %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+    {%- if date != "" or section != "" %}
+    <span class="meta">{{ date | strip }}{% if date != "" and section != "" %} · {% endif %}{{ section }}</span>
+    {%- endif %}
+  </li>
+  {%- endfor %}
+</ul>

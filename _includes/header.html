@@ -1,0 +1,11 @@
+<header>
+  {% if page.layout == 'home' %}<h1 class="site-title">{% else %}<p class="site-title">{% endif %}
+    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+  {% if page.layout == 'home' %}</h1>{% else %}</p>{% endif %}
+  <nav aria-label="Principal">
+    {% for section in site.sections %}
+      <a href="{{ '/' | append: section[0] | append: '/' | relative_url }}"{% if page.layout == 'category' and page.category == section[0] %} aria-current="page"{% endif %}>{{ section[1] | escape }}</a>
+    {% endfor %}
+    <a href="https://www.instagram.com/nintendoamerica/" target="_blank" rel="noopener" aria-label="Instagram da Nintendo (abre em nova aba)">@</a>
+  </nav>
+</header>

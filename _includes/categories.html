@@ -1,0 +1,9 @@
+<ul class="categories">
+  {%- for section in site.sections %}
+  {%- assign slug = section[0] %}
+  <li>
+    <a href="{{ '/' | append: slug | append: '/' | relative_url }}">{{ section[1] | escape }}</a>
+    <span class="meta">{{ site.categories[slug] | size }}</span>
+  </li>
+  {%- endfor %}
+</ul>
