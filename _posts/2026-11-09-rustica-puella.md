@@ -7,9 +7,9 @@ category: historias-poesia
 Exiit diluculo\\
 Rustica puella\\
 Cum grege, cum baculo\\
-Cum lana novella\\
+Cum lana novella
 
 Sunt in grege parvulo\\
 Ovis et astella\\
 Vitula cum vitulo\\
-Caper et capella\\
+Caper et capella
